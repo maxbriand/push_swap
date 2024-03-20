@@ -1,57 +1,99 @@
 NAME = libft.a
 
-COMPILER = cc
-CFLAGS = -Wall -Wextra -Werror -std=c99
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -g
 
-INCLUDE = libft.h
+FT_CTYPE = src/ft_ctype/
+FT_PRINTF = src/ft_stdio/ft_printf/
+FT_STDIO = src/ft_stdio/
+FT_STDLIB = src/ft_stdlib/
+FT_STRING = src/ft_string/
+GNL = src/get_next_line/
+LIST = src/list/
 
-SOURCES = ft_isalpha.c \
-	  ft_isdigit.c \
-	  ft_isalnum.c \
-	  ft_isascii.c \
-	  ft_isprint.c \
-	  ft_strlen.c \
-	  ft_memset.c \
-	  ft_bzero.c \
-	  ft_memcpy.c \
-	  ft_memmove.c \
-	  ft_strlcpy.c \
-	  ft_strlcat.c \
-	  ft_toupper.c \
-	  ft_tolower.c \
-	  ft_strchr.c \
-	  ft_strrchr.c \
-	  ft_strncmp.c \
-	  ft_memchr.c \
-	  ft_memcmp.c \
-	  ft_strnstr.c \
-	  ft_atoi.c \
-	  ft_calloc.c \
-	  ft_strdup.c \
-	  ft_substr.c \
-	  ft_strjoin.c \
-	  ft_strtrim.c \
-	  ft_split.c \
-	  ft_itoa.c \
-	  ft_strmapi.c \
-	  ft_striteri.c \
-	  ft_putchar_fd.c \
-	  ft_putstr_fd.c \
-	  ft_putendl_fd.c \
-	  ft_putnbr_fd.c
+SRC =	$(FT_CTYPE)ft_isalpha.c \
+		$(FT_CTYPE)ft_isdigit.c \
+		$(FT_CTYPE)ft_isalnum.c \
+		$(FT_CTYPE)ft_isascii.c \
+		$(FT_CTYPE)ft_isprint.c \
+		$(FT_CTYPE)ft_toupper.c \
+		$(FT_CTYPE)ft_tolower.c \
+		\
+		$(FT_PRINTF)ft_printf.c \
+		$(FT_PRINTF)ft_parser.c \
+		$(FT_PRINTF)ft_print_char.c \
+		$(FT_PRINTF)ft_print_hexanbr.c \
+		$(FT_PRINTF)ft_print_nbr.c \
+		$(FT_PRINTF)ft_print_pt.c \
+		$(FT_PRINTF)ft_print_str.c \
+		$(FT_PRINTF)ft_print_unnbr.c \
+		$(FT_PRINTF)ft_up_or_low.c \
+		\
+		$(FT_STDIO)ft_putchar_fd.c \
+		$(FT_STDIO)ft_putstr_fd.c \
+		$(FT_STDIO)ft_putendl_fd.c \
+		$(FT_STDIO)ft_putnbr_fd.c \
+		\
+		$(FT_STDLIB)ft_atoi.c \
+		$(FT_STDLIB)ft_atol.c \
+		$(FT_STDLIB)ft_calloc.c \
+		$(FT_STDLIB)ft_itoa.c \
+		\
+		$(FT_STRING)ft_bzero.c \
+		$(FT_STRING)ft_memset.c \
+		$(FT_STRING)ft_memcpy.c \
+		$(FT_STRING)ft_memmove.c \
+		$(FT_STRING)ft_memchr.c \
+		$(FT_STRING)ft_memcmp.c \
+		$(FT_STRING)ft_split.c \
+		$(FT_STRING)ft_strchr.c \
+		$(FT_STRING)ft_strdup.c \
+		$(FT_STRING)ft_striteri.c \
+		$(FT_STRING)ft_strjoin.c \
+		$(FT_STRING)ft_strlcat.c \
+		$(FT_STRING)ft_strlcpy.c \
+		$(FT_STRING)ft_strlen.c \
+		$(FT_STRING)ft_strmapi.c \
+		$(FT_STRING)ft_strncmp.c \
+		$(FT_STRING)ft_strnstr.c \
+		$(FT_STRING)ft_strrchr.c \
+		$(FT_STRING)ft_substr.c \
+		$(FT_STRING)ft_strtrim.c \
+		\
+		$(GNL)get_next_line_bonus.c \
+		$(GNL)get_next_line_utils_bonus.c \
+		\
+		$(LIST)ft_create_elem.c \
+		$(LIST)ft_list_at.c \
+		$(LIST)ft_list_clear.c \
+		$(LIST)ft_list_last.c \
+		$(LIST)ft_list_push_back.c \
+		$(LIST)ft_list_push_front.c \
+		$(LIST)ft_list_push_strs.c \
+		$(LIST)ft_list_reverse.c \
+		$(LIST)ft_list_size.c
 
-OBJS = $(patsubst %.c, %.o, $(SOURCES))
+OBJ = $(patsubst %.c, %.o, $(SRC))
+
+PREPRO_FILES = $(patsubst %.c, %.txt, $(SRC))
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
 
 %.o: %.c $(INCLUDE)
-	$(COMPILER) $(CFLAGS) -g -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ -I./include
+
+# prepro: $(PREPRO_FILES)
+# 	echo "Hello"
+
+# $(PREPRO_FILES): %.txt : %.c
+# 	$(CC) $(CFLAGS) -E $< -o $@ -I./include
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJ)
+	@rm -f $(PREPRO_FILES)
 
 fclean: clean
 	@rm -f $(NAME)

@@ -1,38 +1,12 @@
 #include "push_swap.h"
-
-int	ft_atoi(const char *nptr)
-{
-	char	test;
-	int		i;
-	int		total;
-
-	i = 0;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	test = nptr[i];
-	if (nptr[i] == '-' || nptr[i] == '+')
-	{
-		test = nptr[i];
-		i++;
-	}
-	total = 0;
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		total *= 10;
-		total += (nptr[i] - 48);
-		i++;
-	}
-	if (test == '-')
-		total *= -1;
-	return (total);
-}
+#include "libft.h"
 
 // Create an element of the list
-t_list	*ft_create_elem(int *data)
+t_pslist	*ft_create_elem_two(int *data)
 {
-	t_list	*pt_new_elem;
+	t_pslist	*pt_new_elem;
 
-	pt_new_elem = malloc(sizeof(t_list));
+	pt_new_elem = malloc(sizeof(t_pslist));
 	if (pt_new_elem == 0)
 		return (NULL);
 
@@ -42,13 +16,13 @@ t_list	*ft_create_elem(int *data)
 }
 
 // Add a node at the end of the linked list
-void	ft_list_push_back(t_list **begin_list, void *data)
+void	ft_list_push_back_two(t_pslist **begin_list, void *data)
 {
-	t_list	*node4;
-	t_list	*deref_begin_list;
+	t_pslist	*node4;
+	t_pslist	*deref_begin_list;
 
 	deref_begin_list = *begin_list;
-	node4 = ft_create_elem(data);
+	node4 = ft_create_elem_two(data);
 	node4->number = data;
 	while (deref_begin_list->next != NULL)
 		deref_begin_list = deref_begin_list->next;
@@ -56,18 +30,18 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 }
 
 // convert strings to linked list
-t_list	*strings_to_ll(char **strings)
+t_pslist	*strings_to_ll(char **strings)
 {
-	t_list	*stack_a;
-	int		nbr;
+	t_pslist	*stack_a;
+	int			nbr;
 
 	nbr = ft_atoi(*strings);
-	stack_a = ft_create_elem(&nbr);
+	stack_a = ft_create_elem_two(&nbr);
 	strings++;
 	while(*strings)
 	{
 		nbr = ft_atoi(*strings);
-		ft_list_push_back(&stack_a, &nbr);
+		ft_list_push_back_two(&stack_a, &nbr);
 		strings++;
 	}
 	return (stack_a);

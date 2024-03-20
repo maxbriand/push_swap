@@ -7,14 +7,15 @@
 #include <stdlib.h>
 #include <limits.h>
 
-typedef struct	s_list
+typedef struct	s_pslist
 {
-	int				*number;
-	int				index;
-	struct	s_list	*next;
-} 					t_list;
+	int					*number;
+	int					index;
+	struct	s_pslist	*next;
+} 						t_pslist;
 
-t_list	*strings_to_ll(char **strings);
-void	parsing(char **argv);
+t_pslist	*strings_to_ll(char **strings);
+void		parsing(char **argv);
+void		prg_exit(void);
 
 #endif
