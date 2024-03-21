@@ -9,12 +9,12 @@
 
 typedef struct	s_pslist
 {
-	int					*number;
+	int					number;
 	int					index;
 	struct	s_pslist	*next;
 } 						t_pslist;
 
-t_pslist	*strings_to_ll(char **strings);
+t_pslist	*ft_strings_to_ll(char **strings);
 void		parsing(char **argv);
 void		prg_exit(void);
 

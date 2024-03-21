@@ -22,6 +22,7 @@ int	my_strcmp(const char *s1, const char *s2)
 	}
 	return (0);
 }
+
 // Do all inputs are differents? 
 void	is_unique(char **argv)
 {
@@ -39,6 +40,7 @@ void	is_unique(char **argv)
 		argv++;
 	}
 }
+
 // Do all inputs are integers?
 void is_integer(char **argv)
 {
@@ -53,6 +55,7 @@ void is_integer(char **argv)
 		argv++;
 	}
 }
+
 // Do inputs are numb1ers?
 void	is_number(char **argv)
 {
@@ -79,6 +82,7 @@ void	is_number(char **argv)
 		argv++;
 	}
 }
+
 // check if it's only different int
 void	parsing(char **argv)
 {

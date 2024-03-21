@@ -21,11 +21,9 @@ int main(int argc, char **argv)
 		argv++;
 	}
 	parsing(argv);
-	stack_a = strings_to_ll(argv);
-	while (stack_a)
-	{
-		ft_printf("%d", *stack_a->number);
-		stack_a = stack_a->next;
-	}
+	stack_a = ft_strings_to_ll(argv);
+	// at this moment the string list is properly convert to ll
+
+
 	return(0);
 }

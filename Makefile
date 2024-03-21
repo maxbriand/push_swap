@@ -5,8 +5,8 @@ SRC_DIR = src
 LIBFT = libft/libft.a
 
 FILES = parsing.c \
+		ft_strings_to_ll.c \
 		push_swap.c \
-		strings_to_ll.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))
@@ -21,10 +21,6 @@ $(NAME): $(LIBFT) $(OBJ)
 # create .o files
 src/%.o: src/%.c
 	@$(CC) $(FLAGS) -c $< -o $@ -Iinclude -Ilibft/include
-
-# create 1 .o file
-# src/parsing.o: src/parsing.c
-# 	$(CC) $(FLAGS) -c src/parsing.c -o src/parsing.o -Iinclude -Ilibft/include
 
 # create libft.a
 $(LIBFT): ./libft
