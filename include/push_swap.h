@@ -1,11 +1,12 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-// delete forbidden include
+// delete forbidden include before pushing
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include "libft.h"
 
 typedef struct	s_stack
 {
@@ -14,6 +15,7 @@ typedef struct	s_stack
 	struct	s_stack	*next;
 } 					t_stack;
 
+// other functions
 t_stack	*ft_strings_to_ll(char **strings);
 void	parsing(char **argv);
 void	prg_exit(void);
@@ -22,12 +24,24 @@ void	ft_list_push_back_two(t_stack **begin_list, int number);
 void	ft_list_push_front_two(t_stack **begin_list, int number);
 
 // Stack movements
-void   	ft_swap(t_stack **sended_stack);
+void	ft_swap_a(t_stack **stack_a);
+void	ft_swap_b(t_stack **stack_b);
 void    ft_both_swap(t_stack **stack_a, t_stack **stack_b);
-void    ft_push(t_stack **src, t_stack **dest);
-void    ft_rotate(t_stack **stack);
+
+void    ft_push_a(t_stack **stack_b, t_stack **stack_a);
+void    ft_push_b(t_stack **stack_a, t_stack **stack_b);
+
+void    ft_rotate_a(t_stack **stack_a);
+void    ft_rotate_b(t_stack **stack_b);
 void    ft_both_rotate(t_stack **stack_a, t_stack **stack_b);
-void    ft_reverse_rotate(t_stack **stack);
+
+void    ft_reverse_rotate_a(t_stack **stack_a);
+void    ft_reverse_rotate_b(t_stack **stack_b);
 void    ft_both_reverse_rotate(t_stack **stack_a, t_stack **stack_b);
+
+// Sort small list of numbers
+void    ft_sort_small_list(t_stack **stack, int argc);
+void    ft_sort_two_elements(t_stack **stack);
+
 
 #endif

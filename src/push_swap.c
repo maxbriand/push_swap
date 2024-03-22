@@ -25,33 +25,16 @@ int main(int argc, char **argv)
 	stack_aa = ft_strings_to_ll(argv);
 	// at this moment the string list is properly convert to ll
 	stack_a = &stack_aa;
-	
-	t_stack	**stack_b;
-	t_stack *stack_bb;
-	
-	// stack_bb = ft_create_elem_two(83);
-	stack_bb = malloc(sizeof(t_stack));
-	stack_b = &stack_bb;
-	
-	ft_list_push_back_two(stack_b, 999);
-	ft_list_push_back_two(stack_b, 944);
-	ft_list_push_back_two(stack_b, 882);
 
-	// rotate_b
-	ft_both_reverse_rotate(stack_a, stack_b);
-	
+	printf("%d", argc);
+	if (argc <= 6)
+		ft_sort_small_list(stack_a, argc);
+
 	ft_printf("\nStack_a parts\n\n");
 	while(*stack_a)
 	{
 		ft_printf("Stack_a value: %d\n", (*stack_a)->number);
 		*stack_a = (*stack_a)->next;
-	}
-
-	ft_printf("\nStack_b parts\n\n");
-	while(*stack_b)
-	{
-		ft_printf("Stack_b value: %d\n", (*stack_b)->number);
-		*stack_b = (*stack_b)->next;
 	}
 
 	return(0);
