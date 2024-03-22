@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 	t_stack	**stack_b;
 	t_stack *stack_bb;
 	
-	stack_bb = ft_create_elem_two(83);
+	// stack_bb = ft_create_elem_two(83);
+	stack_bb = malloc(sizeof(t_stack));
 	stack_b = &stack_bb;
 	
 	ft_list_push_back_two(stack_b, 999);
@@ -37,7 +38,7 @@ int main(int argc, char **argv)
 	ft_list_push_back_two(stack_b, 882);
 
 	// rotate_b
-	// ft_reverse_rotate(stack_a);
+	ft_both_reverse_rotate(stack_a, stack_b);
 	
 	ft_printf("\nStack_a parts\n\n");
 	while(*stack_a)
