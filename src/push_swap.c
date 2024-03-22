@@ -6,8 +6,9 @@
 // max and MIN in the parsing
 int main(int argc, char **argv)
 {
-	t_pslist	*stack_a;
-	
+	t_stack	*stack_aa;
+	t_stack	**stack_a;
+
 	if (argc < 2)
 		return (0);
 	if (argc == 2)
@@ -21,9 +22,21 @@ int main(int argc, char **argv)
 		argv++;
 	}
 	parsing(argv);
-	stack_a = ft_strings_to_ll(argv);
+	stack_aa = ft_strings_to_ll(argv);
 	// at this moment the string list is properly convert to ll
+	stack_a = &stack_aa;
+	
+	t_stack	**stack_b;
+	ft_create
 
+	ft_swap(stack_a);
+	ft_
 
+	// test
+	while (*stack_a)
+	{
+		ft_printf("%d\n", (* stack_a)->number);
+		*stack_a = (* stack_a)->next;
+	}
 	return(0);
 }

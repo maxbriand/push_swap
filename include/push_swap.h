@@ -7,15 +7,18 @@
 #include <stdlib.h>
 #include <limits.h>
 
-typedef struct	s_pslist
+typedef struct	s_stack
 {
-	int					number;
-	int					index;
-	struct	s_pslist	*next;
-} 						t_pslist;
+	int				number;
+	int				index;
+	struct	s_stack	*next;
+} 					t_stack;
 
-t_pslist	*ft_strings_to_ll(char **strings);
+t_stack		*ft_strings_to_ll(char **strings);
 void		parsing(char **argv);
 void		prg_exit(void);
+void   		ft_swap(t_stack **sended_stack);
+t_stack		*ft_create_elem_two(int number);
+// void    	ft_double_swap(t_stack* stack_a, t_stack* stack_b);
 
 #endif

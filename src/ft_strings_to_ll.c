@@ -2,11 +2,11 @@
 #include "libft.h"
 
 // Create an element of the list
-t_pslist	*ft_create_elem_two(int number)
+t_stack	*ft_create_elem_two(int number)
 {
-	t_pslist	*pt_new_elem;
+	t_stack	*pt_new_elem;
 
-	pt_new_elem = malloc(sizeof(t_pslist));
+	pt_new_elem = malloc(sizeof(t_stack));
 	if (pt_new_elem == 0)
 		return (NULL);
 	pt_new_elem->next = NULL;
@@ -15,10 +15,10 @@ t_pslist	*ft_create_elem_two(int number)
 }
 
 // Add a node at the end of the linked list
-void	ft_list_push_back_two(t_pslist **begin_list, int number)
+void	ft_list_push_back_two(t_stack **begin_list, int number)
 {
-	t_pslist	*node4;
-	t_pslist	*deref_begin_list;
+	t_stack	*node4;
+	t_stack	*deref_begin_list;
 
 	deref_begin_list = *begin_list;
 	node4 = ft_create_elem_two(number);
@@ -29,9 +29,9 @@ void	ft_list_push_back_two(t_pslist **begin_list, int number)
 }
 
 // convert strings to linked list
-t_pslist	*ft_strings_to_ll(char **strings)
+t_stack	*ft_strings_to_ll(char **strings)
 {
-	t_pslist	*stack_a;
+	t_stack	*stack_a;
 	int			nbr;
 
 	nbr = ft_atoi(*strings);
