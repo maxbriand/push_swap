@@ -19,9 +19,13 @@ void		parsing(char **argv);
 void		prg_exit(void);
 t_stack		*ft_create_elem_two(int number);
 void		ft_list_push_back_two(t_stack **begin_list, int number);
+void		ft_list_push_front_two(t_stack **begin_list, int number);
 
 // Stack movements
 void   		ft_swap(t_stack **sended_stack);
 void    	ft_both_swap(t_stack **stack_a, t_stack **stack_b);
+void    	ft_push(t_stack **src, t_stack **dest);
+
+
 
 #endif

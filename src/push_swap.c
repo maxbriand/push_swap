@@ -26,11 +26,6 @@ int main(int argc, char **argv)
 	// at this moment the string list is properly convert to ll
 	stack_a = &stack_aa;
 	
-
-	//ft_swap(stack_a);
-	// ft_swap ok
-	
-	// test ft_both_swap
 	t_stack	**stack_b;
 	t_stack *stack_bb;
 	
@@ -41,17 +36,17 @@ int main(int argc, char **argv)
 	ft_list_push_back_two(stack_b, 944);
 	ft_list_push_back_two(stack_b, 882);
 
-
-	ft_both_swap(stack_a, stack_b);
+	// rotate_a
+	// ft_rotate(stack_a, stack_b);
 	
-	ft_printf("\n Stack_a parts\n\n");
+	ft_printf("\nStack_a parts\n\n");
 	while(*stack_a)
 	{
 		ft_printf("Stack_a value: %d\n", (*stack_a)->number);
 		*stack_a = (*stack_a)->next;
 	}
 
-	ft_printf("\n Stack_b parts\n\n");
+	ft_printf("\nStack_b parts\n\n");
 	while(*stack_b)
 	{
 		ft_printf("Stack_b value: %d\n", (*stack_b)->number);
