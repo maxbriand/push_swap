@@ -9,6 +9,7 @@ FILES = parsing.c \
 		push_swap.c \
 		ft_swap.c \
 		ft_push.c \
+		ft_rotate.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))

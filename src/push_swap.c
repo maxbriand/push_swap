@@ -36,8 +36,8 @@ int main(int argc, char **argv)
 	ft_list_push_back_two(stack_b, 944);
 	ft_list_push_back_two(stack_b, 882);
 
-	// rotate_a
-	// ft_rotate(stack_a, stack_b);
+	// rotate_b
+	// ft_reverse_rotate(stack_a);
 	
 	ft_printf("\nStack_a parts\n\n");
 	while(*stack_a)
