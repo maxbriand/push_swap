@@ -7,7 +7,7 @@ LIBFT = libft/libft.a
 FILES = parsing.c \
 		ft_strings_to_ll.c \
 		push_swap.c \
-		ft_swap_move.c \
+		ft_swap.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))
@@ -21,7 +21,7 @@ $(NAME): $(LIBFT) $(OBJ)
 
 # create .o files
 src/%.o: src/%.c
-	@$(CC) $(FLAGS) -c $< -o $@ -Iinclude -Ilibft/include
+	@$(CC) $(FLAGS) -g -c $< -o $@ -Iinclude -Ilibft/include
 
 # create libft.a
 $(LIBFT): ./libft

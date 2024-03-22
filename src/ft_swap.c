@@ -1,13 +1,13 @@
 #include "push_swap.h"
 
-// swap on two stack
-// void    ft_double_swap(t_stack* stack_a, t_stack* stack_b)
-// {
-//     ft_swap(stack_a);
-//     ft_swap(stack_b);
-// }
+//swap on two stack
+void    ft_both_swap(t_stack **stack_a, t_stack **stack_b)
+{
+    ft_swap(stack_a);
+    ft_swap(stack_b);
+}
 
-// push_move: 1st and snd element are reverse in the sended stack
+//push_move: 1st and snd element are reverse in the sended stack
 void    ft_swap(t_stack **sended_stack)
 {
     t_stack    *store;

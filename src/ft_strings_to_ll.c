@@ -32,7 +32,7 @@ void	ft_list_push_back_two(t_stack **begin_list, int number)
 t_stack	*ft_strings_to_ll(char **strings)
 {
 	t_stack	*stack_a;
-	int			nbr;
+	int		nbr;
 
 	nbr = ft_atoi(*strings);
 	stack_a = ft_create_elem_two(nbr);
