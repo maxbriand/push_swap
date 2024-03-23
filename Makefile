@@ -12,6 +12,7 @@ FILES = parsing.c \
 		ft_rotate.c \
 		ft_reverse_rotate.c \
 		ft_sort_small_list.c \
+		ft_indexation.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))

@@ -9,9 +9,11 @@ int main(int argc, char **argv)
 	t_stack	*stack_aa;
 	t_stack	**stack_a;
 
-	if (argc < 2)
+	// argc correction 
+	argc -= 1;
+	if (argc < 1)
 		return (0);
-	if (argc == 2)
+	if (argc == 1)
 	{
 		argv = ft_split(argv[1], ' ');
 		if (*argv == NULL)
@@ -21,26 +23,30 @@ int main(int argc, char **argv)
 	{
 		argv++;
 	}
+
 	parsing(argv, argc);
 	stack_aa = ft_strings_to_ll(argv);
 		
 	// at this moment the string list is properly convert to ll
 	stack_a = &stack_aa;
+	ft_indexation(stack_a);
+
 
 	// t_stack **stack_b;
 	// t_stack *stack_bb;
 	// stack_b = &stack_bb;
 
-	if (argc <= 6 && argc >= 3)
+	if (argc <= 5 && argc >= 2)
 		ft_sort_small_list(stack_a, argc);
 // stop the algo at this moment for these numbers and argc = 2
 
 
 	ft_printf("\nStack_a parts\n\n");
-	while(*stack_a)
+	while(stack_aa)
 	{
-		ft_printf("Stack_a value: %d\n", (*stack_a)->number);
-		*stack_a = (*stack_a)->next;
+		ft_printf("Stack_a value: %d\n", stack_aa->number);
+		ft_printf("Stack_a value: %d\n", stack_aa->index);
+		stack_aa = stack_aa->next;
 	}
 
 	return(0);

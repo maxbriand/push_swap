@@ -22,6 +22,7 @@ void	prg_exit(void);
 t_stack	*ft_create_elem_two(int number);
 void	ft_list_push_back_two(t_stack **begin_list, int number);
 void	ft_list_push_front_two(t_stack **begin_list, int number);
+void	ft_indexation(t_stack **stack);
 
 // Stack movements
 void	ft_swap_a(t_stack **stack_a);
@@ -42,6 +43,6 @@ void    ft_both_reverse_rotate(t_stack **stack_a, t_stack **stack_b);
 // Sort small list of numbers
 void    ft_sort_small_list(t_stack **stack, int argc);
 void    ft_sort_two_elements(t_stack **stack);
-
+// void    ft_sort_three_elements(t_stack **stack_a);
 
 #endif
