@@ -20,7 +20,7 @@ void    ft_reverse_rotate_b(t_stack **stack_b)
         old_last_node = old_last_node->next;
     old_last_node->next = new_last_node;
     new_last_node->next = NULL;
-	ft_printf("rrb");
+	ft_printf("rrb\n");
 }
 
 void    ft_reverse_rotate_a(t_stack **stack_a)
@@ -37,5 +37,5 @@ void    ft_reverse_rotate_a(t_stack **stack_a)
         old_last_node = old_last_node->next;
     old_last_node->next = new_last_node;
     new_last_node->next = NULL;
-	ft_printf("rra");
+	ft_printf("rra\n");
 }

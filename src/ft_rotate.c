@@ -21,7 +21,7 @@ void    ft_rotate_b(t_stack **stack_b)
     new_fst_node->next = *stack_b;
     *stack_b = new_fst_node;
     new_last_node->next = NULL;
-	ft_printf("rb");
+	ft_printf("rb\n");
 }
 
 void    ft_rotate_a(t_stack **stack_a)
@@ -39,5 +39,5 @@ void    ft_rotate_a(t_stack **stack_a)
     new_fst_node->next = *stack_a;
     *stack_a = new_fst_node;
     new_last_node->next = NULL;
-	ft_printf("ra");
+	ft_printf("ra\n");
 }
