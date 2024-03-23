@@ -21,8 +21,9 @@ int main(int argc, char **argv)
 	{
 		argv++;
 	}
-	parsing(argv);
+	parsing(argv, argc);
 	stack_aa = ft_strings_to_ll(argv);
+		
 	// at this moment the string list is properly convert to ll
 	stack_a = &stack_aa;
 

@@ -23,26 +23,44 @@ int	my_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-// Do all inputs are differents? 
-void	is_unique(char **argv)
+int	*ft_array_atoi(char **argv, int argc)
 {
-	char	**comparator;
+	int	*argv_int;
+	int	i;
 
-	int i = 1;
-	while (*(argv+1))
+	argv_int = malloc(sizeof(int *) * argc);
+	if (argv_int == NULL)
+		prg_exit();
+	i = 0;
+	while(argv[i])
 	{
-		if (my_strcmp(*argv, "-0") == 0 && *argv)
-			*argv = ft_strdup("0");
-		comparator = argv + 1;
-		if (my_strcmp(*comparator, "-0") == 0 && *comparator)
-			*comparator = ft_strdup("0");
-		while (*comparator)
+		argv_int[i] = ft_atoi(argv[i]); 
+		i++;
+	}
+	return (argv_int);
+}
+
+
+// Do all inputs are differents? 
+void	is_unique(int *argv_int, int argc)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i + 1 < argc)
+	{	
+		j = i + 1;
+		while (j < argc)
 		{
-			if (my_strcmp(*argv, *comparator) == 0)
+			if (argv_int[i] == argv_int[j])
+			{
+				free(argv_int);
 				prg_exit();
-			comparator++;
+			}
+			j++;
 		}
-		argv++;
+		i++;
 	}
 }
 
@@ -89,14 +107,18 @@ void	is_number(char **argv)
 }
 
 // check if it's only different int
-void	parsing(char **argv)
+void	parsing(char **argv, int argc)
 {
+	int	*argv_int;
+	
 	if (*argv == NULL)
 		exit(EXIT_SUCCESS);
 	is_number(argv);
 	ft_printf("All args are numbers\n");
 	is_integer(argv);
 	ft_printf("All args are integer\n");
-	is_unique(argv);
+	argv_int = ft_array_atoi(argv, argc);
+	is_unique(argv_int, argc);
 	ft_printf("All args are different\n");
+	free(argv_int);
 }

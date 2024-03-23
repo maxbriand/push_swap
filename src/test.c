@@ -5,10 +5,6 @@
 
 int main(int ac, char **av)
 {
-    printf("%p\n", av);
-    printf("%p\n", av+1);
-    av++;    
-    printf("%p\n", av);    
-    printf("%p\n", av+1);    
+    printf("%d\n", ac);
     return(0);
 }
