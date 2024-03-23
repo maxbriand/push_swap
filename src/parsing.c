@@ -28,9 +28,14 @@ void	is_unique(char **argv)
 {
 	char	**comparator;
 
-	while (*argv)
+	int i = 1;
+	while (*(argv+1))
 	{
+		if (my_strcmp(*argv, "-0") == 0 && *argv)
+			*argv = ft_strdup("0");
 		comparator = argv + 1;
+		if (my_strcmp(*comparator, "-0") == 0 && *comparator)
+			*comparator = ft_strdup("0");
 		while (*comparator)
 		{
 			if (my_strcmp(*argv, *comparator) == 0)

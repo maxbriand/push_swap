@@ -26,9 +26,14 @@ int main(int argc, char **argv)
 	// at this moment the string list is properly convert to ll
 	stack_a = &stack_aa;
 
-	printf("%d", argc);
-	if (argc <= 6)
+	// t_stack **stack_b;
+	// t_stack *stack_bb;
+	// stack_b = &stack_bb;
+
+	if (argc <= 6 && argc >= 3)
 		ft_sort_small_list(stack_a, argc);
+// stop the algo at this moment for these numbers and argc = 2
+
 
 	ft_printf("\nStack_a parts\n\n");
 	while(*stack_a)

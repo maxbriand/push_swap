@@ -1,14 +1,15 @@
 #include "push_swap.h"
 
-void    ft_sort_two_elements(t_stack **stack)
+void    ft_sort_two_elements(t_stack **stack_a)
 {
-    if ((*))
+    if (((*stack_a)->number) > ((*stack_a)->next->number))
+        ft_swap_a(stack_a);
 }
 
-void    ft_sort_small_list(t_stack **stack, int argc)
+void    ft_sort_small_list(t_stack **stack_a, int argc)
 {
     if (argc = 3)
-        ft_sort_two_elements(stack);
+        ft_sort_two_elements(stack_a);
     // else if (argc = 4)
     //     ft_sort_three_elements(stack);
     // else if (argc = 5)

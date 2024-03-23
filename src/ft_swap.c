@@ -19,7 +19,7 @@ void    ft_swap_b(t_stack **stack_b)
     store = deref_stack->next->next;
     deref_stack->next->next = deref_stack;
     deref_stack->next = store;
-	ft_printf("sa");
+	ft_printf("sb");
 }
 
 //push_move: 1st and snd element are reverse in the sended stack
@@ -35,5 +35,5 @@ void    ft_swap_a(t_stack **stack_a)
     store = deref_stack->next->next;
     deref_stack->next->next = deref_stack;
     deref_stack->next = store;
-	ft_printf("sb");
+	ft_printf("sa");
 }
