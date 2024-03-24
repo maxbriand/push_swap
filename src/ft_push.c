@@ -24,15 +24,15 @@ void    ft_push_a(t_stack **stack_b, t_stack **stack_a)
 {
     t_stack *new_fst_node;
 	
-	if (!(*stack_a))
-        return ;
-	new_fst_node = (*stack_a)->next;
 	if (!(*stack_b))
-		(*stack_a)->next = NULL;
+        return ;
+	new_fst_node = (*stack_b)->next;
+	if (!(*stack_a))
+		(*stack_b)->next = NULL;
 	else
-		(*stack_a)->next = (*stack_b);
-	*stack_b = *stack_a;
-	*stack_a = new_fst_node;
+		(*stack_b)->next = (*stack_a);
+	*stack_a = *stack_b;
+	*stack_b = new_fst_node;
 	ft_printf("pa\n");
 }
 
