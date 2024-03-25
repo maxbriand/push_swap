@@ -38,18 +38,18 @@ int main(int argc, char **argv)
 
 	if (argc <= 5 && argc >= 2)
 		ft_sort_small_list(stack_a, stack_b, argc);
-
-// stop the algo at this moment for these numbers and argc == 2
-
-	stack_aa = *stack_a;
-
-	ft_printf("\nStack_a parts\n\n");
-	while(stack_aa)
-	{
-		ft_printf("Stack_a value: %d\n", stack_aa->number);
-		// ft_printf("Stack_a value: %d\n", stack_aa->index);
-		stack_aa = stack_aa->next;
-	}
-
+	// else
+	// 	ft_radix(stack_a, stack_b);
+	
+	// free stacks
 	return(0);
 }
+
+	// stack_aa = *stack_a;
+	// ft_printf("\nStack_a parts\n\n");
+	// while(stack_aa)
+	// {
+	// 	ft_printf("Stack_a value: %d\n", stack_aa->number);
+	// 	// ft_printf("Stack_a value: %d\n", stack_aa->index);
+	// 	stack_aa = stack_aa->next;
+	// }

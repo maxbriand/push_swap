@@ -8,44 +8,50 @@ void    ft_sort_two_elements(t_stack **stack_a)
 
 void    ft_sort_three_elements(t_stack **stack_a)
 {
-    int i;
-    
-    i = 0;
-    if ((*stack_a)->index != 2)
-        ft_rotate_a(stack_a);
-    if ((*stack_a)->index == 2)
+    if ((*stack_a)->index > (*stack_a)->next->index)
     {
-        ft_reverse_rotate_a(stack_a);
-        ft_sort_two_elements(stack_a);
-    }
+        if ((*stack_a)->index > (*stack_a)->next->next->index)
+            ft_reverse_rotate_a(stack_a);
     else
-        ft_sort_two_elements(stack_a);
+    {
+    }
+        if ((*stack_a)->next->index > (*stack_a)->next->next->index)
+            ft_rotate_a(stack_a);
+    }
+    ft_sort_two_elements(stack_a);
 }
 
-void    ft_sort_four_elements(t_stack **stack_a, t_stack **stack_b)  
+void    ft_sort_four_elements(t_stack **stack_a, t_stack **stack_b, int nb)  
 {
-    while ((*stack_a)->index != 3)
+    if((*stack_a)->index == nb)
+        ft_push_b(stack_a, stack_b);
+    else if((*stack_a)->next->index == nb)
+    {
+        ft_swap_a(stack_a);
+        ft_push_b(stack_a, stack_b);
+    }
+    else if((*stack_a)->next->next->index == nb)
+    {
         ft_rotate_a(stack_a);
-    ft_push_b(stack_a, stack_b);
+        ft_rotate_a(stack_a);
+        ft_push_b(stack_a, stack_b);
+    }
+    else
+    {
+        ft_rotate_a(stack_a);
+        ft_push_b(stack_a, stack_b);
+    }
     ft_sort_three_elements(stack_a);
     ft_push_a(stack_b, stack_a);
-    ft_reverse_rotate_a(stack_a);
 }
 
 void    ft_sort_five_elements(t_stack **stack_a, t_stack **stack_b)  
 {
-    while ((*stack_a)->index != 4 && (*stack_a)->index != 3)
+    while((*stack_a)->index != 0)
         ft_rotate_a(stack_a);
     ft_push_b(stack_a, stack_b);
-    while ((*stack_a)->index != 4 && (*stack_a)->index != 3)
-        ft_rotate_a(stack_a);
-    ft_push_b(stack_a, stack_b);
-    ft_sort_three_elements(stack_a);    
-    ft_sort_two_elements(stack_b);
+    ft_sort_four_elements(stack_a, stack_b, 1);
     ft_push_a(stack_b, stack_a);
-    ft_reverse_rotate_a(stack_a);
-    ft_push_a(stack_b, stack_a);
-    ft_reverse_rotate_a(stack_a);
 }
 
 void    ft_sort_small_list(t_stack **stack_a, t_stack **stack_b, int argc)
@@ -55,7 +61,7 @@ void    ft_sort_small_list(t_stack **stack_a, t_stack **stack_b, int argc)
     else if (argc == 3)
         ft_sort_three_elements(stack_a);
     else if (argc == 4)
-        ft_sort_four_elements(stack_a, stack_b);
+        ft_sort_four_elements(stack_a, stack_b, 0);
     else if (argc == 5)
         ft_sort_five_elements(stack_a, stack_b);
 }

@@ -43,7 +43,10 @@ void    ft_both_reverse_rotate(t_stack **stack_a, t_stack **stack_b);
 void    ft_sort_small_list(t_stack **stack_a, t_stack **stack_b, int argc);
 void    ft_sort_two_elements(t_stack **stack);
 void    ft_sort_three_elements(t_stack **stack_a);
-void    ft_sort_four_elements(t_stack **stack_a, t_stack **stack_b);
+void    ft_sort_four_elements(t_stack **stack_a, t_stack **stack_b, int nb);
 void    ft_sort_five_elements(t_stack **stack_a, t_stack **stack_b);
+
+// Radix algorithm
+//void	ft_radix(stack_a, stack_b);
 
 #endif
