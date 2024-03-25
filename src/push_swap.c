@@ -22,11 +22,9 @@ int main(int argc, char **argv)
 			prg_exit();
 	}
 	else
-	{
 		argv++;
-	}
-
-	parsing(argv, argc);
+	ft_parsing(argv, argc);
+	ft_is_sorted(argv);
 	stack_aa = ft_strings_to_ll(argv);
 		
 	// at this moment the string list is properly convert to ll

@@ -107,7 +107,7 @@ void	is_number(char **argv)
 }
 
 // check if it's only different int
-void	parsing(char **argv, int argc)
+void	ft_parsing(char **argv, int argc)
 {
 	int	*argv_int;
 	

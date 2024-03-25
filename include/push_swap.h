@@ -17,7 +17,8 @@ typedef struct	s_stack
 
 // other functions
 t_stack	*ft_strings_to_ll(char **strings);
-void	parsing(char **argv, int argc);
+void	ft_parsing(char **argv, int argc);
+void	ft_is_sorted(char **argv);
 void	prg_exit(void);
 t_stack	*ft_create_elem_two(int number);
 void	ft_list_push_back_two(t_stack **begin_list, int number);
