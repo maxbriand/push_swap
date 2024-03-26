@@ -23,6 +23,7 @@ void	prg_exit(void);
 t_stack	*ft_create_elem_two(int number);
 void	ft_list_push_back_two(t_stack **begin_list, int number);
 void	ft_indexation(t_stack **stack);
+void    ft_free_stack(t_stack **stack_a);
 
 // Stack movements
 void	ft_swap_a(t_stack **stack_a);
@@ -48,6 +49,9 @@ void    ft_sort_four_elements(t_stack **stack_a, t_stack **stack_b, int nb);
 void    ft_sort_five_elements(t_stack **stack_a, t_stack **stack_b);
 
 // Radix algorithm
-//void	ft_radix(stack_a, stack_b);
+void	ft_sort_list(t_stack **stack_a, int argc);
+void	ft_radix(t_stack **stack_a, t_stack **stack_b, int argc);
+void	ft_binary_sort(t_stack **stack_a, t_stack **stack_b, int bin_i, int argc);
+int		ft_max_binary_digit(int nbr);
 
 #endif

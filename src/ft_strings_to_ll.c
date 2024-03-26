@@ -37,11 +37,19 @@ t_stack	*ft_strings_to_ll(char **strings)
 	nbr = ft_atoi(*strings);
 	stack_a = ft_create_elem_two(nbr);
 	strings++;
-	while(*strings)
+	while (*strings)
 	{
 		nbr = ft_atoi(*strings);
 		ft_list_push_back_two(&stack_a, nbr);
 		strings++;
 	}
+	// t_stack *store;
+	// while (stack_a != NULL)
+	// {
+	// 	printf("hey");
+	// 	store = stack_a;
+	// 	stack_a = stack_a->next;
+	// 	free(store);
+	// }
 	return (stack_a);
 }

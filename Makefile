@@ -4,16 +4,18 @@ CFLAGS = -Wall -Werror -Wextra
 SRC_DIR = src
 LIBFT = libft/libft.a
 
-FILES = ft_parsing.c \
+FILES = main.c \
+		ft_parsing.c \
 		ft_strings_to_ll.c \
-		push_swap.c \
 		ft_swap.c \
 		ft_push.c \
 		ft_rotate.c \
 		ft_reverse_rotate.c \
 		ft_sort_small_list.c \
 		ft_indexation.c \
-		ft_is_sorted.c
+		ft_is_sorted.c \
+		ft_sort_list.c \
+		ft_free_stack.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))

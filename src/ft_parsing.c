@@ -40,7 +40,6 @@ int	*ft_array_atoi(char **argv, int argc)
 	return (argv_int);
 }
 
-
 // Do all inputs are differents? 
 void	is_unique(int *argv_int, int argc)
 {
@@ -114,11 +113,11 @@ void	ft_parsing(char **argv, int argc)
 	if (*argv == NULL)
 		exit(EXIT_SUCCESS);
 	is_number(argv);
-	ft_printf("All args are numbers\n");
+	// ft_printf("All args are numbers\n");
 	is_integer(argv);
-	ft_printf("All args are integer\n");
+	// ft_printf("All args are integer\n");
 	argv_int = ft_array_atoi(argv, argc);
 	is_unique(argv_int, argc);
-	ft_printf("All args are different\n");
+	// ft_printf("All args are different\n");
 	free(argv_int);
 }

@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
 void    ft_sort_two_elements(t_stack **stack_a)
-{
+{    
     if (((*stack_a)->index) > ((*stack_a)->next->index))
         ft_swap_a(stack_a);
 }
