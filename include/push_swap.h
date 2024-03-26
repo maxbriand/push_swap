@@ -24,6 +24,7 @@ t_stack	*ft_create_elem_two(int number);
 void	ft_list_push_back_two(t_stack **begin_list, int number);
 void	ft_indexation(t_stack **stack);
 void    ft_free_stack(t_stack **stack_a);
+void    ft_free_strings(char **argv);
 
 // Stack movements
 void	ft_swap_a(t_stack **stack_a);

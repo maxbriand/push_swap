@@ -21,12 +21,10 @@ void	ft_binary_sort(t_stack **stack_a, t_stack **stack_b, int bin_i, int argc)
 	i = 0;
 	while (i < argc)
 	{
-		// ft_printf("The index of: %d is: %d\n", (*stack_a)->number, (*stack_a)->index);
-		// ft_printf("The last digit of his binary is: %d\n", (((*stack_a)->index)>> 0)& 1);
 		if (((((*stack_a)->index) >> bin_i) & 1) == 0)
 			ft_push_b(stack_a, stack_b);
 		else
-			ft_reverse_rotate_a(stack_a);
+			ft_rotate_a(stack_a);
 		i++;
 	}
 	while (*stack_b != NULL)
@@ -58,6 +56,4 @@ void	ft_sort_list(t_stack **stack_a, int argc)
 		ft_sort_small_list(stack_a, stack_b, argc);
 	else
 	    ft_radix(stack_a, stack_b, argc);
-	// free(null_node_b);
-    // free(stack_b);
 }
