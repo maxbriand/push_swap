@@ -10,7 +10,7 @@ void    ft_free_strings(char **argv)
         free(argv[i]);
         i++;
     }
-    free(argv);
+    free(argv); 
 }
 
 void    ft_free_stack(t_stack **stack_a)

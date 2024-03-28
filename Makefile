@@ -1,4 +1,5 @@
-NAME = libpushswap.a
+OUTPUT = push_swap
+# NAME = libpush_swap.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 SRC_DIR = src
@@ -20,12 +21,13 @@ FILES = main.c \
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))
 
-all: $(NAME)
+all: $(OUTPUT)
 
 # create pushswap.a
-$(NAME): $(LIBFT) $(OBJ)
-	@cp $(LIBFT) $(NAME)
-	@ar rcs $(NAME) $(OBJ)
+$(OUTPUT): $(LIBFT) $(OBJ)
+	@$(CC) $(FLAGS) $(OBJ) -L./libft -lft -o $(OUTPUT)
+# @cp $(LIBFT) $(NAME)
+# @ar rcs $(NAME) $(OBJ)
 
 # create .o files
 src/%.o: src/%.c
@@ -35,13 +37,18 @@ src/%.o: src/%.c
 $(LIBFT): ./libft
 	@make -C libft
 
+test: $(LIBFT)
+	@rm -f test
+	@$(CC) $(FLAGS) -g tests/test.c -Ilibft/include -L./libft -lft -o test
+
 clean:
 	@rm -f $(OBJ)
 	@make clean -C libft
 
 fclean: clean
-	@rm -f $(NAME)
+#	@rm -f $(NAME)
 	@make fclean -C libft
+	@rm -f $(OUTPUT)
 
 re: fclean
 	@make
