@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/02 18:02:32 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/02 18:02:46 by mbriand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*// free all node data
@@ -10,8 +22,8 @@ void	free_fct(void *pt_value)
 void	ft_list_clear(t_list *begin_list, void (*free_fct)(void *))
 {
 	t_list	*store;
-	
-	while(begin_list != NULL)
+
+	while (begin_list != NULL)
 	{
 		free_fct(begin_list->data);
 		store = begin_list;

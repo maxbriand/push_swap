@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:09 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:06:11 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/02 17:10:35 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,22 @@
 
 void	ft_indexation(t_stack **stack)
 {
-    int     index;
-    t_stack *reference;
-    t_stack *candidate;
+	int		index;
+	t_stack	*reference;
+	t_stack	*candidate;
 
-    reference = *stack;
-    while (reference)
-    {
-
-        index = 0;
-        candidate = *stack;
-        while (candidate)
-        {
-            if (reference->number > candidate->number)
-                index++;
-            candidate = candidate->next;
-        }
-        reference->index = index;
-        reference = reference->next;
-    }
+	reference = *stack;
+	while (reference)
+	{
+		index = 0;
+		candidate = *stack;
+		while (candidate)
+		{
+			if (reference->number > candidate->number)
+				index++;
+			candidate = candidate->next;
+		}
+		reference->index = index;
+		reference = reference->next;
+	}
 }
-

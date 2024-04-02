@@ -83,7 +83,7 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 
 %.o: %.c $(INCLUDE)
-	@$(CC) $(CFLAGS) -g -c $< -o $@ -I./include
+	@$(CC) $(CFLAGS) -c $< -o $@ -I./include
 
 # prepro: $(PREPRO_FILES)
 # 	echo "Hello"

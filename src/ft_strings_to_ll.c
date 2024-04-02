@@ -6,12 +6,11 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:39 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:06:40 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/02 17:52:11 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 // Create an element of the list
 t_stack	*ft_create_elem_two(int number)
@@ -55,6 +54,9 @@ t_stack	*ft_strings_to_ll(char **strings)
 		ft_list_push_back_two(&stack_a, nbr);
 		strings++;
 	}
+	return (stack_a);
+}
+
 	// t_stack *store;
 	// while (stack_a != NULL)
 	// {
@@ -63,5 +65,3 @@ t_stack	*ft_strings_to_ll(char **strings)
 	// 	stack_a = stack_a->next;
 	// 	free(store);
 	// }
-	return (stack_a);
-}

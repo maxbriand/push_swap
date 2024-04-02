@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/02 18:01:57 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/02 18:02:20 by mbriand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 // All elements in the list are reverse
@@ -11,10 +23,10 @@ void	ft_list_reverse(t_list **begin_list)
 	prev = NULL;
 	while (current_node != NULL)
 	{
-		next_one = current_node->next; // nex_one data 20 // 30
-		current_node->next = prev; // current_node next data NULL // 10
-		prev = current_node; // prev data 10 // 20
-		current_node = next_one; // current_node 20 // 30
+		next_one = current_node->next;
+		current_node->next = prev;
+		prev = current_node;
+		current_node = next_one;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:23 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:06:24 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/02 17:31:34 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 	// - *stack_b = null pointer
 	// - stack_b = the adress of this null pointer
 
-void    ft_push_b(t_stack **stack_a, t_stack **stack_b)
+void	ft_push_b(t_stack **stack_a, t_stack **stack_b)
 {
-    t_stack *new_fst_node;
-	
+	t_stack	*new_fst_node;
+
 	if (!(*stack_a))
-        return ;
+		return ;
 	new_fst_node = (*stack_a)->next;
 	if (!(*stack_b))
 		(*stack_a)->next = NULL;
@@ -32,12 +32,12 @@ void    ft_push_b(t_stack **stack_a, t_stack **stack_b)
 	ft_printf("pb\n");
 }
 
-void    ft_push_a(t_stack **stack_b, t_stack **stack_a)
+void	ft_push_a(t_stack **stack_b, t_stack **stack_a)
 {
-    t_stack *new_fst_node;
-	
+	t_stack	*new_fst_node;
+
 	if (!(*stack_b))
-        return ;
+		return ;
 	new_fst_node = (*stack_b)->next;
 	if (!(*stack_a))
 		(*stack_b)->next = NULL;
@@ -104,4 +104,3 @@ void    ft_push_a(t_stack **stack_b, t_stack **stack_a)
 	}
 	return(0);
 }*/
-

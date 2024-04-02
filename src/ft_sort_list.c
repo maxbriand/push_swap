@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:33 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:06:34 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/02 17:37:15 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,21 +26,21 @@ int	ft_max_binary_digit(int nbr)
 	return (max);
 }
 
-void	ft_binary_sort(t_stack **stack_a, t_stack **stack_b, int bin_i, int argc)
+void	ft_binary_sort(t_stack **stk_a, t_stack **stk_b, int bin_i, int argc)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < argc)
 	{
-		if (((((*stack_a)->index) >> bin_i) & 1) == 0)
-			ft_push_b(stack_a, stack_b);
+		if (((((*stk_a)->index) >> bin_i) & 1) == 0)
+			ft_push_b(stk_a, stk_b);
 		else
-			ft_rotate_a(stack_a);
+			ft_rotate_a(stk_a);
 		i++;
 	}
-	while (*stack_b != NULL)
-		ft_push_a(stack_b, stack_a);
+	while (*stk_b != NULL)
+		ft_push_a(stk_b, stk_a);
 }
 
 void	ft_radix(t_stack **stack_a, t_stack **stack_b, int argc)
@@ -59,13 +59,13 @@ void	ft_radix(t_stack **stack_a, t_stack **stack_b, int argc)
 
 void	ft_sort_list(t_stack **stack_a, int argc)
 {
-	t_stack **stack_b;
-	t_stack *null_node_b;
+	t_stack	**stack_b;
+	t_stack	*null_node_b;
 
-    null_node_b = NULL;
+	null_node_b = NULL;
 	stack_b = &null_node_b;
-	if ( argc >= 2 && argc <= 5)
+	if (argc >= 2 && argc <= 5)
 		ft_sort_small_list(stack_a, stack_b, argc);
 	else
-	    ft_radix(stack_a, stack_b, argc);
+		ft_radix(stack_a, stack_b, argc);
 }

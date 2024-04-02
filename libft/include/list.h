@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list.h                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/02 18:06:42 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/02 18:07:31 by mbriand          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIST_H
 # define LIST_H
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*data;
 	struct s_list	*next;
@@ -16,6 +28,6 @@ void	ft_list_push_back(t_list **begin_list, void *data);
 void	ft_list_push_front(t_list **begin_list, void *data);
 t_list	*ft_list_push_strs(int size, char **strs);
 void	ft_list_reverse(t_list **begin_list);
-int     ft_list_size(t_list *begin_list);
+int		ft_list_size(t_list *begin_list);
 
 #endif

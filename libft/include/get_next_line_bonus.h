@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 16:04:09 by mbriand           #+#    #+#             */
-/*   Updated: 2024/02/08 16:04:10 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/02 18:06:37 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 #  define BUFFER_SIZE 42
 # endif
 
-//#include <stddef.h>
-#include <stdlib.h>
+# include <stdlib.h>
 
 char	*get_next_line_bonus(int fd);
 char	*ft_strchr_two(const char *s, int c);
