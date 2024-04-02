@@ -17,6 +17,7 @@ FILES = main.c \
 		ft_sort_list.c \
 		ft_free_stack.c \
 		ft_utils.c \
+		ft_multiple_strings.c \
 
 SRC = $(addprefix $(SRC_DIR)/, $(FILES))
 OBJ = $(patsubst %.c, %.o, $(SRC))

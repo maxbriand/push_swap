@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:50 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:52:02 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/02 18:54:55 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	main(int argc, char **argv)
 		prg_exit();
 	argc = ft_sc(argv);
 	ft_parsing(argv, argc);
+	// stop at this moment if only one argument
 	ft_is_sorted(argv);
 	fst_node = ft_strings_to_ll(argv);
 	ft_free_strings(argv);
