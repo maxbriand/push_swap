@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:50 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 18:54:55 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/17 21:20:30 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,8 @@ int	main(int argc, char **argv)
 	if (argc < 1)
 		return (0);
 	argv = ft_handle_multiple_strings(argv + 1);
-	if (*argv == NULL)
-		prg_exit();
 	argc = ft_sc(argv);
 	ft_parsing(argv, argc);
-	// stop at this moment if only one argument
 	ft_is_sorted(argv);
 	fst_node = ft_strings_to_ll(argv);
 	ft_free_strings(argv);
@@ -37,17 +34,15 @@ int	main(int argc, char **argv)
 	ft_free_stack(stack_a);
 	return (0);
 }
+//	test the new array of string
+		// int	f = 0;
+		// while (argv[f])
+		// {
+		// 	ft_printf("str number %d is: %s\n", f, argv[f]);
+		// 	f++;
+		// }
 	// free all argv
 // ADD FREE IN PARSING AND EVERYWHERE WHERE I CAN T STOP THE PROGRAM
-
-// test the new array of string
-	//int	f = 0;
-	// while (argv[f])
-	// {
-	// 	ft_printf("str number %d is: %s\n", f, argv[f]);
-	// 	f++;
-	// }
-
 //	delete this part
 	// fst_node = *stack_a;
 	// while(fst_node)

@@ -6,14 +6,23 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:17:53 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 18:34:57 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/17 21:19:30 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// exit error
-void	prg_exit(void)
+// exit error during new argv creation
+void	prg_exit_ms(char **argv)
+{
+	if (argv != NULL)
+		ft_free_strings(argv);
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
+}
+
+// exit error during parsing
+void	prg_exit_parsing(void)
 {
 	write(2, "Error\n", 6);
 	exit(EXIT_FAILURE);
@@ -41,7 +50,7 @@ int	*ft_array_atoi(char **argv, int argc)
 
 	argv_int = malloc(sizeof(int *) * argc);
 	if (argv_int == NULL)
-		prg_exit();
+		prg_exit_parsing();
 	i = 0;
 	while (argv[i])
 	{

@@ -6,12 +6,13 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:46:04 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:48:56 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/03 17:35:14 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// 
 int	ft_sc(char	**str)
 {
 	int	i;
@@ -24,40 +25,43 @@ int	ft_sc(char	**str)
 	return (i);
 }
 
-int	ft_add_strs(char **strsjoined, char **strs, int i)
+// join the old_array with joined_array
+int	ft_add_array(char **joined_array, char **old_array, int i)
 {
 	int	j;
 
-	if (strs == NULL)
+	if (old_array == NULL)
 		return (i);
 	j = 0;
-	while (strs[j] != NULL)
+	while (old_array[j] != NULL)
 	{
-		strsjoined[i] = strs[j];
+		joined_array[i] = old_array[j];
 		i++;
 		j++;
 	}
-	free(strs);
+	free(old_array);
 	return (i);
 }
 
-char	**ft_array_str_join(char **strsa, char **strsb)
+// join two array of str
+char	**ft_array_str_join(char **fst_array, char **snd_array)
 {
+	char	**joined_array;
 	int		counter;
 	int		i;
-	char	**strsjoined;
 
-	counter = ft_sc(strsa) + ft_sc(strsb) + 1;
-	strsjoined = malloc(sizeof(char *) * counter);
-	if (strsjoined == NULL)
+	counter = ft_sc(fst_array) + ft_sc(snd_array) + 1;
+	joined_array = malloc(sizeof(char *) * counter);
+	if (joined_array == NULL)
 		return (NULL);
 	i = 0;
-	i = ft_add_strs(strsjoined, strsa, i);
-	i = ft_add_strs(strsjoined, strsb, i);
-	strsjoined[i] = NULL;
-	return (strsjoined);
+	i = ft_add_array(joined_array, fst_array, i);
+	i = ft_add_array(joined_array, snd_array, i);
+	joined_array[i] = NULL;
+	return (joined_array);
 }
 
+//
 char	**ft_handle_multiple_strings(char **argv)
 {
 	int		i;
@@ -69,6 +73,11 @@ char	**ft_handle_multiple_strings(char **argv)
 	while (argv[i])
 	{
 		store_array = ft_split(argv[i], ' ');
+		if (*store_array == NULL)
+		{
+			free(store_array);
+			prg_exit_ms(new_argv);
+		}
 		new_argv = ft_array_str_join(new_argv, store_array);
 		i++;
 	}

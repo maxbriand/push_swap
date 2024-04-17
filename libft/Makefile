@@ -54,6 +54,7 @@ SRC =	$(FT_CTYPE)ft_isalpha.c \
 		$(FT_STRING)ft_strlcpy.c \
 		$(FT_STRING)ft_strlen.c \
 		$(FT_STRING)ft_strmapi.c \
+		$(FT_STRING)ft_strcmp.c \
 		$(FT_STRING)ft_strncmp.c \
 		$(FT_STRING)ft_strnstr.c \
 		$(FT_STRING)ft_strrchr.c \

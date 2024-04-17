@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:53:21 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:58:08 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/17 21:29:27 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <limits.h>
 # include "libft.h"
@@ -30,7 +29,6 @@ typedef struct s_stack
 t_stack	*ft_strings_to_ll(char **strings);
 void	ft_parsing(char **argv, int argc);
 void	ft_is_sorted(char **argv);
-void	prg_exit(void);
 int		my_strcmp(const char *s1, const char *s2);
 int		*ft_array_atoi(char **argv, int argc);
 t_stack	*ft_create_elem_two(int number);
@@ -39,10 +37,14 @@ void	ft_indexation(t_stack **stack);
 void	ft_free_stack(t_stack **stack_a);
 void	ft_free_strings(char **argv);
 
+// exit functions
+void	prg_exit_ms(char **argv);
+void	prg_exit_parsing(void);
+
 // Handle multiple strings
 int		ft_sc(char	**str);
-int		ft_add_strs(char **strsjoined, char **strs, int i);
-char	**ft_array_str_join(char **strsa, char **strsb);
+int		ft_add_array(char **joined_array, char **old_array, int i);
+char	**ft_array_str_join(char **fst_array, char **snd_array);
 char	**ft_handle_multiple_strings(char **argv);
 
 // Stack movements

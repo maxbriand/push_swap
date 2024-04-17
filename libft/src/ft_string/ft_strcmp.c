@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/02 17:06:14 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/03 17:37:38 by mbriand          ###   ########.fr       */
+/*   Created: 2024/04/04 13:48:53 by mbriand           #+#    #+#             */
+/*   Updated: 2024/04/04 13:55:42 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_is_sorted(char **argv)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (argv[i + 1])
+	while ((s1[i] || s2[i]))
 	{
-		if (ft_atoi(argv[i]) > ft_atoi(argv[i + 1]))
-			return ;
+		if ((unsigned char) s1[i] != (unsigned char) s2[i])
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 		i++;
 	}
-	ft_free_strings(argv);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
