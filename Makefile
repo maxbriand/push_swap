@@ -30,15 +30,11 @@ $(NAME): $(LIBFT) $(OBJ)
 
 # create .o files
 src/%.o: src/%.c
-	@$(CC) $(FLAGS) -g -c $< -o $@ -Iinclude -Ilibft/include
+	@$(CC) $(FLAGS) -c $< -o $@ -Iinclude -Ilibft/include
 
 # create libft.a
 $(LIBFT): ./libft
 	@make -C libft
-
-test: $(LIBFT)
-	@rm -f test
-	@$(CC) $(FLAGS) -g tests/test.c -Ilibft/include -L./libft -lft -o test
 
 clean:
 	@rm -f $(OBJ)
