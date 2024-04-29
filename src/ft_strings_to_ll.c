@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:39 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/02 17:52:11 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/30 00:02:58 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,42 +26,43 @@ t_stack	*ft_create_elem_two(int number)
 }
 
 // Add a node at the end of the linked list
-void	ft_list_push_back_two(t_stack **begin_list, int number)
+int	ft_list_push_back_two(t_stack **begin_list, int number)
 {
 	t_stack	*node4;
 	t_stack	*deref_begin_list;
 
 	deref_begin_list = *begin_list;
 	node4 = ft_create_elem_two(number);
+	if (node4 == NULL)
+		return (0);
 	node4->number = number;
 	while (deref_begin_list->next != NULL)
 		deref_begin_list = deref_begin_list->next;
 	deref_begin_list->next = node4;
+	return (1);
 }
 
 // convert strings to linked list
-t_stack	*ft_strings_to_ll(char **strings)
+t_stack	*ft_strings_to_ll(char **nbr_str)
 {
 	t_stack	*stack_a;
+	char	**store_nbr_str;
 	int		nbr;
+	int		check_error;
 
-	nbr = ft_atoi(*strings);
+	store_nbr_str = nbr_str;
+	nbr = ft_atoi(*nbr_str);
 	stack_a = ft_create_elem_two(nbr);
-	strings++;
-	while (*strings)
+	if (stack_a == NULL)
+		ft_exit_failure(nbr_str, NULL, NULL);
+	nbr_str++;
+	while (*nbr_str)
 	{
-		nbr = ft_atoi(*strings);
-		ft_list_push_back_two(&stack_a, nbr);
-		strings++;
+		nbr = ft_atoi(*nbr_str);
+		check_error = ft_list_push_back_two(&stack_a, nbr);
+		if (check_error == 0)
+			ft_exit_failure(store_nbr_str, NULL, &stack_a);
+		nbr_str++;
 	}
 	return (stack_a);
 }
-
-	// t_stack *store;
-	// while (stack_a != NULL)
-	// {
-	// 	printf("hey");
-	// 	store = stack_a;
-	// 	stack_a = stack_a->next;
-	// 	free(store);
-	// }

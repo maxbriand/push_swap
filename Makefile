@@ -5,6 +5,7 @@ SRC_DIR = src
 LIBFT = libft/libft.a
 
 FILES = main.c \
+		ft_exit.c \
 		ft_parsing.c \
 		ft_strings_to_ll.c \
 		ft_swap.c \
@@ -15,7 +16,6 @@ FILES = main.c \
 		ft_indexation.c \
 		ft_is_sorted.c \
 		ft_sort_list.c \
-		ft_free_stack.c \
 		ft_utils.c \
 		ft_multiple_strings.c \
 
@@ -30,7 +30,7 @@ $(NAME): $(LIBFT) $(OBJ)
 
 # create .o files
 src/%.o: src/%.c
-	@$(CC) $(FLAGS) -c $< -o $@ -Iinclude -Ilibft/include
+	@$(CC) $(FLAGS) -g -c $< -o $@ -Iinclude -Ilibft/include
 
 # create libft.a
 $(LIBFT): ./libft

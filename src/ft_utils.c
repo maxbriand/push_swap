@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:17:53 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/17 21:19:30 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/29 23:30:38 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	*ft_array_atoi(char **argv, int argc)
 
 	argv_int = malloc(sizeof(int *) * argc);
 	if (argv_int == NULL)
-		prg_exit_parsing();
+		ft_exit_failure(argv, NULL, NULL);
 	i = 0;
 	while (argv[i])
 	{

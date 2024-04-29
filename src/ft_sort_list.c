@@ -6,7 +6,7 @@
 /*   By: mbriand <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 17:06:33 by mbriand           #+#    #+#             */
-/*   Updated: 2024/04/03 17:10:47 by mbriand          ###   ########.fr       */
+/*   Updated: 2024/04/30 00:03:12 by mbriand          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,26 @@ int	ft_max_binary_digit(int nbr)
 	return (max);
 }
 
+static int	ft_stack_sorted_check(t_stack **stack_a)
+{
+	t_stack	*deref_stack_a;
+
+	deref_stack_a = *stack_a;
+	while (deref_stack_a->next)
+	{
+		if (deref_stack_a->index > deref_stack_a->next->index)
+			return (0);
+		deref_stack_a = deref_stack_a->next;
+	}
+	return (1);
+}
+
 void	ft_binary_sort(t_stack **stk_a, t_stack **stk_b, int bin_i, int argc)
 {
 	int	i;
 
 	i = 0;
-	while (i < argc)
+	while (i < argc && ft_stack_sorted_check(stk_a) == 0)
 	{
 		if (((((*stk_a)->index) >> bin_i) & 1) == 0)
 			ft_push_b(stk_a, stk_b);
@@ -50,7 +64,7 @@ void	ft_radix(t_stack **stack_a, t_stack **stack_b, int argc)
 
 	i = 0;
 	max = ft_max_binary_digit(argc - 1);
-	while (i < max)
+	while (i < max && ft_stack_sorted_check(stack_a) == 0)
 	{
 		ft_binary_sort(stack_a, stack_b, i, argc);
 		i++;
